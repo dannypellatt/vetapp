@@ -3,8 +3,9 @@ namespace vetapp.Models
 {
     public class Owner
     {
-        public int OwnerID { get; set; }
-        public string Name { get; set; }
+        public int? idowner { get; set; }
+        public string? owner_first_name { get; set; }
+        public string? owner_last_name { get; set; }
     }
 }
 

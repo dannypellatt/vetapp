@@ -47,6 +47,20 @@ namespace vetapp.Controllers
 
             return RedirectToAction("ViewPet", new { id = pet.idpet });
         }
+
+        public IActionResult InsertPet()
+        {
+            var prod = repo.AssignOwner();
+            return View(prod);
+        }
+
+        //This redirect to index may be wrong place
+
+        public IActionResult InsertPetToDatabase(Pet petToInsert)
+        {
+            repo.InsertPet(petToInsert);
+            return RedirectToAction("Index");
+        }
     }
 }
 

@@ -5,20 +5,20 @@
 <table class="table">
     <tr>
         <th>Pet ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Type</th>
+        <th>Name</th>
+        <th>Animal</th>
+        <th>Owner</th>
     </tr>
 
     <tr>
         <td>@Model.idpet</td>
-        <td>@Model.pet_first_name</td>
-        <td>@Model.pet_last_name</td>
+        <td>@Model.pet_first_name @Model.pet_last_name</td>
         <td>@Model.pet_type</td>
+        <td>@Model.owner_last_name, @Model.owner_first_name</td>
     </tr>
 
 </table>
 
 <div style="display: block">
-    <a href="/Pet/UpdatePet/@Model.idpet">Update this Pet</a>
+    <a href="/Pet/UpdatePet/@Model.idpet">Update @Model.pet_first_name</a>
 </div>

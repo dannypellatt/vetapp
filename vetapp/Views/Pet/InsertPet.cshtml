@@ -1,8 +1,8 @@
 ﻿@model Pet
 
-<h2>Update @Model.pet_first_name @Model.pet_last_name</h2>
+<h2>Add a New Pet</h2>
 
-@using (Html.BeginForm("UpdatePetToDatabase", "Pet", "Post"))
+@using (Html.BeginForm("InsertPetToDatabase", "Pet", "Post"))
 {
     <input asp-for="idpet" type="hidden" value="@Model.idpet" />
 
@@ -15,8 +15,15 @@
     <label asp-for="pet_type" class="control-label">Animal Type</label>
     <input type="text" step="0.01" name="type" class="form-control" value="@Model.pet_type" />
 
-    <label asp-for="pet_type" class="control-label">Owner ID</label>
-    <input type="text" step="0.01" name="type" class="form-control" value="@Model.idowner" />
+    <div class="form-group">
+        <label for="">Select an Owner</label>
+        <select class="form-control" name="idowner" value="">
+            @foreach (var owner in Model.Owners)
+            {
+                <option value="@owner.idowner">@owner.owner_last_name, @owner.owner_first_name</option>
+            }
+        </select>
+    </div>
 
-    <input type="submit" value="Update Pet" class="btn btn-primary" />
+    <input type="submit" value="Create Pet" class="btn btn-primary" />
 }
