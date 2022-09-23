@@ -7,6 +7,7 @@ namespace vetapp
     {
         public IEnumerable<Pet> GetAllPets();
         public Pet GetPet(int id);
+        public void UpdatePet(Pet pet);
     }
 }
 

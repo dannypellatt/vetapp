@@ -24,6 +24,12 @@ namespace vetapp
         {
             return _conn.QuerySingle<Pet>("SELECT * FROM vetapp.pet WHERE IDPET = @id", new { id = id });
         }
+
+        public void UpdatePet(Pet pet)
+        {
+            _conn.Execute("UPDATE pet SET Name = @pet_first_name, Surname = @pet_last_name, Type = @pet_type WHERE IDPET = @id",
+             new { name = pet.pet_first_name, surname = pet.pet_last_name, type = pet.pet_type, id = pet.idpet });
+        }
     }
 }
 
