@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
     IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("vetapp"));
+
     conn.Open();
     return conn;
 });

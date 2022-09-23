@@ -12,8 +12,8 @@
     @foreach (var pet in @Model)
     {
         <tr>
-            <td>@pet.idpet</td>
-            <td>@pet.pet_first_name</td>
+            <td><a href=/Pet/ViewPet/@pet.idpet>@pet.idpet</a></td>
+            <td><a href=/Pet/ViewPet/@pet.idpet>@pet.pet_first_name @pet.pet_last_name</a></td>
             <td>@pet.pet_last_name</td>
             <td>@pet.pet_type</td>
         </tr>

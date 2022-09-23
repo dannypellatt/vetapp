@@ -23,6 +23,12 @@ namespace vetapp.Controllers
             var pets = repo.GetAllPets();
             return View(pets);
         }
+
+        public IActionResult ViewPet(int id)
+        {
+            var pet = repo.GetPet(id);
+            return View(pet);
+        }
     }
 }
 

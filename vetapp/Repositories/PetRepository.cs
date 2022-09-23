@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using vetapp.Models;
 
 namespace vetapp
@@ -16,7 +17,12 @@ namespace vetapp
 
         public IEnumerable<Pet> GetAllPets()
         {
-            return _conn.Query<Pet>("SELECT * FROM PET;");
+            return _conn.Query<Pet>("SELECT * FROM vetapp.pet;");
+        }
+
+        public Pet GetPet(int id)
+        {
+            return _conn.QuerySingle<Pet>("SELECT * FROM vetapp.pet WHERE IDPET = @id", new { id = id });
         }
     }
 }
